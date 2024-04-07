@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTMX Example</title>
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+  </head>
+  <body>
+    <button
+      hx-get="http://localhost:5000/api/data"
+      hx-target="#result"
+      hx-indicator="dots"
+    >
+      Load Data
+    </button>
+    <div id="result"></div>
+
+    <!-- Sample server response -->
+    <script id="api-response" type="text/html">
+      <p>Data Loaded Successfully:</p>
+      <p>{{ data }}</p>
+    </script>
+  </body>
+</html>
